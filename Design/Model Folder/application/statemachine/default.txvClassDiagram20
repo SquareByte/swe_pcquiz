@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhjwhte13zy4aqhd">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<property name="__options" value="option.nlayout.recursive=true"/>
+		<reference referencedUin="design:view:::V1hexuhjwhthb62cbwvkj">
+			<property name="bounds" value="5,125,142,155"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::V1hexuhjwhtegjh-x0i3js">
+			<property name="bounds" value="5,5,145,75"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.statemachine.StateMachineFactory">
+			<property name="bounds" value="162,5,200,125"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.statemachine.StateMachineFactory:FACTORY">
+				<property name="sourceAnchor" value="367,131"/>
+				<property name="targetAnchor" value="363,135"/>
+				<property name="bendpoints" value="396,131,396,164,363,164"/>
+				<property name="smooth_bendpoints" value="396,131,396,164,363,164"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.statemachine.StateMachineFactoryImpl">
+			<property name="bounds" value="400,-4,296,272"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="bounds_setted_by_user" value="true"/>
+			<reference referencedUin="jdt:l_impl:src:application.statemachine.StateMachineFactoryImpl:StateMachineFactory">
+				<property name="sourceAnchor" value="405,45"/>
+				<property name="targetAnchor" value="367,45"/>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>

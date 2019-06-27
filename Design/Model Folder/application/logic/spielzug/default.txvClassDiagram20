@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhjw7nk9zy-m6gd9d">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<property name="__options" value="option.nlayout.recursive=true"/>
+		<reference referencedUin="design:view:::V1hexuhjw7nl2k1-xc039b">
+			<property name="bounds" value="5,5,154,75"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.logic.spielzug.SpielzugFactoryImpl">
+			<property name="bounds" value="15,275,200,197"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="collapsedCompartments" value=""/>
+			<reference referencedUin="jdt:l_impl:src:application.logic.spielzug.SpielzugFactoryImpl:SpielzugFactory">
+				<property name="sourceAnchor" value="220,303"/>
+				<property name="targetAnchor" value="500,303"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.logic.spielzug.SpielzugFactory">
+			<property name="bounds" value="495,212,200,110"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.logic.spielzug.SpielzugFactory:FACTORY">
+				<property name="sourceAnchor" value="700,323"/>
+				<property name="targetAnchor" value="696,327"/>
+				<property name="bendpoints" value="729,323,729,356,696,356"/>
+				<property name="smooth_bendpoints" value="729,323,729,356,696,356"/>
+			</reference>
+		</reference>
+		<reference referencedUin="design:view:::V1hexuhjwhowt42-ds8yl9">
+			<property name="bounds" value="535,35,138,75"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.logic.spielzug.SpielBrett">
+			<property name="bounds" value="255,5,200,287"/>
+			<property name="location_set_by_user" value="true"/>
+			<property name="collapsedCompartments" value=""/>
+		</reference>
+	</view>
+</nodeSet>

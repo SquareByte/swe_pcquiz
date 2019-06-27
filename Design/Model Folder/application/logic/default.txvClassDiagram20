@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<nodeSet  version="1.1">
+	<view uin="V1hexuhjw7nhu1axexrda">
+		<property name="$defaultDiagram" value="true"/>
+		<property name="$metaclass" value="ClassDiagram20"/>
+		<property name="__options" value="option.nlayout.recursive=true"/>
+		<reference referencedUin="design:view:::V1hexuhjw7njhgd-l3ljij">
+			<property name="bounds" value="5,5,123,139"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="design:view:::V1hexuhjw7nk9zy-m6gd9d">
+			<property name="bounds" value="128,5,159,155"/>
+			<property name="location_set_by_user" value="true"/>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.logic.LogicFactory">
+			<property name="bounds" value="215,175,190,125"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="jdt:l_ast:src:application.logic.LogicFactory:FACTORY">
+				<property name="sourceAnchor" value="410,301"/>
+				<property name="targetAnchor" value="406,305"/>
+				<property name="bendpoints" value="439,301,439,334,406,334"/>
+				<property name="smooth_bendpoints" value="439,301,439,334,406,334"/>
+			</reference>
+		</reference>
+		<reference referencedUin="jdt:e_class:src:application.logic.LogicFactoryImpl">
+			<property name="bounds" value="5,195,200,182"/>
+			<property name="location_set_by_user" value="true"/>
+			<reference referencedUin="jdt:l_impl:src:application.logic.LogicFactoryImpl:LogicFactory">
+				<property name="sourceAnchor" value="210,230"/>
+				<property name="targetAnchor" value="220,230"/>
+			</reference>
+		</reference>
+	</view>
+</nodeSet>
