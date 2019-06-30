@@ -2,6 +2,7 @@ package application.logic;
 
 import java.util.ArrayList;
 
+import application.logic.spielzug.SpielBrett;
 import application.logic.spielzug.SpielzugFactoryImpl;
 import application.logic.spielzug.port.SpieleSpielzug;
 import application.statemachine.StateMachineFactory;
@@ -56,16 +57,26 @@ public class Logic implements Observer, Subject, SpieleSpielzug {
 	
 	// sysOp
 	public void wuerfeln() {
-		/* Wenn der Zustand passt, wird die Operation durchgeführt. */
 		if (this.currentState.equals(State.S.WuerfelWarten)) {
-			this.spielZug.wuerfeln();	
+			this.spielZug.wuerfeln();
 		}
 		// no need for this.inform(), spielZug calls setState -> triggers Observers
 	};
 	
 	public void streiterWaehlen(int feld) {
-		/* Wenn der Zustand passt, wird die Operation durchgeführt. */
-		this.spielZug.streiterWaehlen(feld);
-		this.inform();
-	};
+		if (this.currentState.equals(State.S.StreiterwahlWarten)) {
+			this.spielZug.streiterWaehlen(feld);
+			this.inform();
+		}
+	}
+
+	@Override
+	public SpielBrett getSpielbrett() {
+		return this.spielZug.getSpielbrett();
+	}
+
+	@Override
+	public int getSpielerImSpiel() {
+		return this.spielZug.getSpielerImSpiel();
+	}
 }

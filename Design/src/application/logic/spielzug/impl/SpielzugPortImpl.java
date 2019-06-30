@@ -39,7 +39,7 @@ public class SpielzugPortImpl implements SpielzugPort, SpieleSpielzug {
 
 		this.spieler = 0;
 		this.spielerImSpiel = 3; // DEBUG / TEST
-		this.try_ = 0;
+		this.try_ = 1;
 	}
 	
 	public int getAugenzahl() {
@@ -54,6 +54,10 @@ public class SpielzugPortImpl implements SpielzugPort, SpieleSpielzug {
 		return this.spielBrett.streiterIndizes(this.spieler);
 	}
 	
+	public int getSpielerImSpiel() {
+		return this.spielerImSpiel;
+	}
+	
 	/**
 	 * Wraps "this.spieler++; setState(WuerfelWarten);"
 	 * 
@@ -61,10 +65,10 @@ public class SpielzugPortImpl implements SpielzugPort, SpieleSpielzug {
 	 */
 	private void next(boolean gezogen) {
 		if (gezogen || this.try_ >= this.MAX_TRIES) {
-			this.try_++;
+			this.try_ = 1;
 			this.spieler = (this.spieler + 1) % this.spielerImSpiel;
 		} else {
-			this.try_ = 0;
+			this.try_++;
 		}
 		this.stateMachine.setState(S.WuerfelWarten);
 	}
@@ -77,30 +81,37 @@ public class SpielzugPortImpl implements SpielzugPort, SpieleSpielzug {
 			this.spielBrett.zieheRaus(this.spieler);
 			gezogen = true;
 		} else {
-			if (this.spielBrett.streiterImSpiel(this.spieler) > 1) {
+			ArrayList<Integer> zurWahl = this.spielBrett.streiterIndizes(this.spieler);
+			if (zurWahl.size() > 1) {
 				//ArrayList<Integer> zurWahl = this.spielBrett.streiterIndizes(this.spieler);
 				this.stateMachine.setState(S.StreiterwahlWarten);
 				return;
 			} else {
 				// Shortcut: play only move
-				ArrayList<Integer> zurWahl = this.spielBrett.streiterIndizes(this.spieler);
-				//assert zurWahl.size() == 1;
-				this.spielBrett.ziehe(zurWahl.get(0), this.augenzahl);
-				gezogen = true;
+				if (zurWahl.size() == 1) {
+					this.spielBrett.ziehe(zurWahl.get(0), this.augenzahl);
+					gezogen = true;
+				}
 			}
 		}
 		next(gezogen);
 	}
 
 	public void streiterWaehlen(int feld) {
-		// TODO check feld validity
-		this.spielBrett.ziehe(feld, this.augenzahl);
-		this.next(true);
+		if (this.spielBrett.streiterIndizes(this.spieler).contains(feld)) {
+			this.spielBrett.ziehe(feld, this.augenzahl);
+			this.next(true);			
+		} // else retry
 	}
 
 	@Override
 	public SpieleSpielzug spieleSpielzug() {
 		return this;
+	}
+
+	@Override
+	public SpielBrett getSpielbrett() {
+		return this.spielBrett;
 	}
 
 }

@@ -718,11 +718,6 @@
 							<property name="$name" value="SD20_Int_InvocationSpecification1"/>
 							<property name="receiveExecutionSpecificationPuin" value="design:node:::7mazv8jx1pybrv1ykt56:7x5rzxjx1pv6pzuxx4us:7x5rzxjx1pv6pzec6wv1:-y8nsowjx1o2sg3qzrpr2:-yrgd8ejx1moajx-d5pl1p"/>
 							<property name="call_cachedSequenceNumber" value="1.1.1"/>
-							<link uin="n26ztnjx1pybrvyzuym6">
-								<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
-								<participant referencedUin="design:node:::3fbcwhjx1pybrv-m9pha:7x5rzxjx1pv4f2-j6qlt7:7x5rzxjx1pv4f2frrs8x:c87hzvjx1ozxcj-vetgfr:-y8nsowjx1oxui22r5jwr:-yrgd8ejx1moajx-d5pl1p" role="Client"></participant>
-								<participant referencedUin="jdt:e_method:src:application.logic.spielzug.SpielBrett.istHeimatfeldBesetzt:istHeimatfeldBesetzt~I" role="Supplier"></participant>
-							</link>
 							<node uin="67lclajx1pybrv-vhf6k1">
 								<property name="$metaclass" value="SD20_Int_Message_Argument"/>
 								<property name="$name" value="SD20_Int_Message_Argument1"/>

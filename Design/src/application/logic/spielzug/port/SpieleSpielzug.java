@@ -1,4 +1,7 @@
 package application.logic.spielzug.port;
+
+import application.logic.spielzug.SpielBrett;
+
 public interface SpieleSpielzug {
 
 	void streiterWaehlen(int feld);
@@ -11,5 +14,9 @@ public interface SpieleSpielzug {
 	public int getAktiverSpieler();
 	
 	public java.util.ArrayList<Integer> getStreiterZurWahl();
+
+	public SpielBrett getSpielbrett();
+	
+	public int getSpielerImSpiel();
 	
 }

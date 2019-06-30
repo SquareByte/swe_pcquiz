@@ -21,6 +21,21 @@ public class SpielBrett {
 			this.wissensPfad[i] = LEER;
 		}
 	}
+	
+	public String getSpielerFarbe(int i) {
+		switch(i) {
+			case(0):
+				return "Blau";
+			case(1):
+				return "Grün";
+			case(2):
+				return "Rot";
+			case(3):
+				return "Lila";
+			default:
+				return "Grau";
+		}
+	}
 
 	public boolean istHeimatfeldBesetzt(int spieler) {
 		return this.heimatfeldBelegung[spieler] > 0;
@@ -78,16 +93,16 @@ public class SpielBrett {
 			s += getFeldAsString(idx);
 		}
 		s += "\n" + getFeldAsString(LEN_WISSENSPFAD - 1);
-		s += "                                                                  "; // " " * (fmt.length * (stretch - 2)) == 66
+		s += "                                                               "; // " " * (fmt.length * (stretch - 2)) == 66
 		s += getFeldAsString(stretch) + "\n";
-		for (int idx = stretch + 1; idx < LEN_WISSENSPFAD - 1; idx++) {
+		for (int idx = LEN_WISSENSPFAD - 2; idx > stretch; idx--) {
 			s += getFeldAsString(idx);
 		}
 		return s;
 	}
 	
 	private String getFeldAsString(int idx) {
-		String fmtStart = "(%s)"; // <_> {_} \_/
+		String fmtStart = "<%s>"; // <_> {_} \_/
 		String fmtFeld = "[%s]";
 		String fmt;
 		String contents;

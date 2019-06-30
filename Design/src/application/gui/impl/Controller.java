@@ -28,13 +28,7 @@ public class Controller implements Observer {
 		this.myModel.attach(this);
 		
 		this.targetInput = "x";
-		this.command = "Hallo und Willkommen bei\n" + 
-	               "+-----------------------------------------+\n" + 
-				   "|   ____   ___       __   _  _  __  ____  |\n" +
-		   		   "|  (  _ \\ / __)___  /  \\ / )( \\(  )(__  ) |\n" +
-		   		   "|   ) __/( (__(___)(  O )) \\/ ( )(  / _/  |\n" +
-		   		   "|  (__)   \\___)     \\__\\)\\____/(__)(____) |\n" +
-	               "+-----------------------------------------+\n";
+		this.command = "Bitte drücke <x> und bestätige mit Enter, um zu Würfeln!";
 	}
 	
 	/**
@@ -49,8 +43,9 @@ public class Controller implements Observer {
 				this.targetInput = null;
 				this.command = "Wähle den zu ziehenden Wissensstreiter, indem du\n" +
 				               "seine Position eingibst und mit Enter bestätigst!";
+			} else {
+				System.err.println("Unknown state " + newState.stateName());
 			}
-			System.err.println("Unknown state " + newState.stateName());
 		}
 	}
 	
@@ -75,11 +70,10 @@ public class Controller implements Observer {
 		} else {
 			try {
 				i = Integer.parseInt(s);
-				// TODO validate
 			} catch (NumberFormatException e) {
 				// retry
 				this.myView.show("Bitte gib eine Zahl ein!");
-				this.doit();
+				return;
 			}
 			this.myModel.streiterWaehlen(i);
 		}
