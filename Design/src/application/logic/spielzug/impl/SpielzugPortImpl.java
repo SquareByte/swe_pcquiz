@@ -82,7 +82,11 @@ public class SpielzugPortImpl implements SpielzugPort, SpieleSpielzug {
 				this.stateMachine.setState(S.StreiterwahlWarten);
 				return;
 			} else {
-				
+				// Shortcut: play only move
+				ArrayList<Integer> zurWahl = this.spielBrett.streiterIndizes(this.spieler);
+				//assert zurWahl.size() == 1;
+				this.spielBrett.ziehe(zurWahl.get(0), this.augenzahl);
+				gezogen = true;
 			}
 		}
 		next(gezogen);
