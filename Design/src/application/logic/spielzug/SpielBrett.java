@@ -42,7 +42,7 @@ public class SpielBrett {
 	
 	public void zieheRaus(int spieler) {
 		this.heimatfeldBelegung[spieler]--;
-		this.belegeFeld(spieler, (LEN_WISSENSPFAD / MAX_SPIELER) * spieler); // Spieler 0 Startfeld 0, Spieler 1 hat Startfeld 12, ...
+		this.belegeFeld(spieler, (LEN_WISSENSPFAD / MAX_SPIELER) * spieler); // Spieler 0 hat Startfeld 0, Spieler 1 hat Startfeld 12, ...
 	}
 	
 	public void ziehe(int vonFeld, int wuerfelZahl) {
@@ -55,11 +55,52 @@ public class SpielBrett {
 		if (this.wissensPfad[feldIndex] == LEER) {
 			this.wissensPfad[feldIndex] = spieler;
 		} else {
-			this.belegeFeld(spieler, (feldIndex+1) % LEN_WISSENSPFAD); // XXX hacks while collision is not implemented
+			System.err.println("Skipping collision on " + feldIndex + "!"); // XXX hacks while collision is not implemented
+			this.belegeFeld(spieler, (feldIndex+1) % LEN_WISSENSPFAD);
 		}
 	}
 	
 	private void gebeFeldFrei(int feldIndex) {
 		this.wissensPfad[feldIndex] = LEER;
+	}
+	
+	/**
+	 * (_)[_][_][0][_][_]......[_][_]
+	 * [_]                        [2]
+	 * [_][_][_][3][_](_)......[_][_]
+	 * 
+	 * @return
+	 */
+	public String getSpielbrettAsString() {
+		String s = "";
+		int stretch = (LEN_WISSENSPFAD - 2) / 2;
+		for (int idx = 0; idx < stretch; idx++) {
+			s += getFeldAsString(idx);
+		}
+		s += "\n" + getFeldAsString(LEN_WISSENSPFAD - 1);
+		s += "                                                                  "; // " " * (fmt.length * (stretch - 2)) == 66
+		s += getFeldAsString(stretch) + "\n";
+		for (int idx = stretch + 1; idx < LEN_WISSENSPFAD - 1; idx++) {
+			s += getFeldAsString(idx);
+		}
+		return s;
+	}
+	
+	private String getFeldAsString(int idx) {
+		String fmtStart = "(%s)"; // <_> {_} \_/
+		String fmtFeld = "[%s]";
+		String fmt;
+		String contents;
+		if (idx % (LEN_WISSENSPFAD / MAX_SPIELER) == 0) {
+			fmt = fmtStart;
+		} else {
+			fmt = fmtFeld;
+		}
+		if (this.wissensPfad[idx] == LEER) {
+			contents = "_";
+		} else {
+			contents = Integer.toString(this.wissensPfad[idx]); // String.valueOf(
+		}
+		return String.format(fmt, contents);
 	}
 }
