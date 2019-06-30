@@ -5,11 +5,11 @@
 	<view uin="Vam8ynkjx1moajs-hlpkxf">
 		<property name="$metaclass" value="SequenceDiagram20"/>
 		<property name="$referencedInteractionUin" value="design:node:::-yrgd8ejx1moajx-d5pl1p"/>
-		<property name="__options" value="option.nlayout.recursive=true"/>
 		<property name="$name" value="SD - Würfeln"/>
+		<property name="__options" value="Diagram Detail Level=Implementation&#10;option.nlayout.recursive=true"/>
 		<reference referencedUin="design:node:::-yrgd8ejx1moajx-d5pl1p">
 			<property name="$shortcutReference" value="true"/>
-			<property name="bounds" value="155,15,970,1341"/>
+			<property name="bounds" value="155,15,1041,1341"/>
 			<property name="location_set_by_user" value="true"/>
 			<property name="bounds_setted_by_user" value="true"/>
 			<reference referencedUin="design:node:::-y8nsowjx1oxui22r5jwr:-yrgd8ejx1moajx-d5pl1p">

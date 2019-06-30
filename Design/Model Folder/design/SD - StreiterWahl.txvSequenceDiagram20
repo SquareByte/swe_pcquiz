@@ -5,11 +5,11 @@
 	<view uin="Vam8ynkjx1szm6r-lb6ddk">
 		<property name="$metaclass" value="SequenceDiagram20"/>
 		<property name="$referencedInteractionUin" value="design:node:::-yrgd8ejx1szm6s-fcf6zj"/>
-		<property name="__options" value="option.nlayout.recursive=true"/>
 		<property name="$name" value="SD - StreiterWahl"/>
+		<property name="__options" value="Diagram Detail Level=Implementation&#10;option.nlayout.recursive=true"/>
 		<reference referencedUin="design:node:::-yrgd8ejx1szm6s-fcf6zj">
 			<property name="$shortcutReference" value="true"/>
-			<property name="bounds" value="75,15,986,361"/>
+			<property name="bounds" value="75,15,1061,361"/>
 			<property name="location_set_by_user" value="true"/>
 			<property name="bounds_setted_by_user" value="true"/>
 			<reference referencedUin="design:node:::-y8nsowjx1vg123-r500zv:-yrgd8ejx1szm6s-fcf6zj">

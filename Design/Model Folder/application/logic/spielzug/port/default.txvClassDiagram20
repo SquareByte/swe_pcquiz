@@ -11,7 +11,7 @@
 			<property name="location_set_by_user" value="true"/>
 		</reference>
 		<reference referencedUin="jdt:e_class:src:application.logic.spielzug.port.SpieleSpielzug">
-			<property name="bounds" value="0,0,160,94"/>
+			<property name="bounds" value="0,0,200,169"/>
 			<property name="location_set_by_user" value="true"/>
 		</reference>
 	</view>

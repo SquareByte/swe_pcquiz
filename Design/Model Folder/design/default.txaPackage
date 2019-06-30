@@ -723,6 +723,11 @@
 								<property name="$name" value="SD20_Int_Message_Argument1"/>
 								<property name="stringValue" value="spieler"/>
 							</node>
+							<link uin="ieje0rjxiunvyi9vjsrg">
+								<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
+								<participant referencedUin="design:node:::3fbcwhjx1pybrv-m9pha:7x5rzxjx1pv4f2-j6qlt7:7x5rzxjx1pv4f2frrs8x:c87hzvjx1ozxcj-vetgfr:-y8nsowjx1oxui22r5jwr:-yrgd8ejx1moajx-d5pl1p" role="Client"></participant>
+								<participant referencedUin="jdt:e_method:src:application.logic.spielzug.SpielBrett.istHeimatfeldBesetzt:istHeimatfeldBesetzt~I" role="Supplier"></participant>
+							</link>
 						</node>
 						<node uin="7x5rzxjx1py2gg-z3c0w6">
 							<property name="$metaclass" value="SD20_Int_MountingRegion"/>
@@ -1236,6 +1241,11 @@
 							</link>
 						</node>
 					</node>
+					<link uin="ieje0rjxiuogs3-g9nmcs">
+						<property name="$metaclass" value="SD20_Message_LinkToSignatureNamedElement"/>
+						<participant referencedUin="design:node:::l2gqtvjx1ozxci-b6a3bz:c87hzvjx1n3lpa28iqmo:-y8nsowjx1mrt37-c1ufux:-yrgd8ejx1moajx-d5pl1p" role="Client"></participant>
+						<participant referencedUin="jdt:e_method:src:application.logic.spielzug.impl.SpielzugPortImpl.wuerfeln:wuerfeln" role="Supplier"></participant>
+					</link>
 				</node>
 			</node>
 			<link uin="ieje0rjx1mv7rx3rc7hi">
